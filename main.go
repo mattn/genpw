@@ -81,9 +81,9 @@ func run(w io.Writer, o, n, nc, sc int) error {
 			}
 			break
 		}
-		nw += n + 1
 		fmt.Fprint(w, pw.String())
 
+		nw += n + 1
 		if nw < 80-n {
 			fmt.Fprint(w, " ")
 		} else {
@@ -105,7 +105,7 @@ func main() {
 	var n int
 	var nc int
 	var sc int
-	flag.IntVar(&c, "c", -1, "count of output")
+	flag.IntVar(&c, "c", 64, "count of output")
 	flag.IntVar(&n, "n", 16, "number of characters")
 	flag.IntVar(&nc, "nc", -1, "minimum count of numbers (default: any)")
 	flag.IntVar(&sc, "sc", -1, "minimum count of symbols (default: any)")
