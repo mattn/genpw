@@ -9,6 +9,13 @@ import (
 	"io"
 	"math/big"
 	"os"
+	"runtime"
+)
+
+const (
+	name     = "genpw"
+	version  = "0.0.3"
+	revision = "HEAD"
 )
 
 var (
@@ -105,11 +112,18 @@ func main() {
 	var n int
 	var nc int
 	var sc int
+	var showVersion bool
 	flag.IntVar(&c, "c", 64, "count of output")
 	flag.IntVar(&n, "n", 16, "number of characters")
 	flag.IntVar(&nc, "nc", -1, "minimum count of numbers (default: any)")
 	flag.IntVar(&sc, "sc", -1, "minimum count of symbols (default: any)")
+	flag.BoolVar(&showVersion, "v", false, "show version")
 	flag.Parse()
+
+	if showVersion {
+		fmt.Printf("%s %s (rev: %s/%s)\n", name, version, revision, runtime.Version())
+		return
+	}
 
 	err := run(os.Stdout, c, n, nc, sc)
 	if err != nil {
