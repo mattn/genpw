@@ -95,6 +95,7 @@ func run(w io.Writer, o, n, nc, sc int) error {
 			break
 		}
 	}
+	fmt.Fprintln(w)
 
 	return nil
 }
@@ -119,5 +120,4 @@ func main() {
 		}
 		os.Exit(2)
 	}
-	fmt.Println()
 }
