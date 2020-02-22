@@ -7,7 +7,7 @@ Password Generator
 ```
 Usage of genpw:
   -c int
-    	count of output (default -1)
+    	count of output (default 64)
   -n int
     	number of characters (default 16)
   -nc int
