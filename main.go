@@ -51,10 +51,10 @@ func run(w io.Writer, o, n, nc, sc int) error {
 
 	var buf bytes.Buffer
 	if n > nnc+nsc {
-		for r := 'a'; r < 'z'; r++ {
+		for r := 'a'; r <= 'z'; r++ {
 			buf.WriteRune(r)
 		}
-		for r := 'A'; r < 'Z'; r++ {
+		for r := 'A'; r <= 'Z'; r++ {
 			buf.WriteRune(r)
 		}
 	}
